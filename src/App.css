@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+/* styles.css */
+:root {
+    --bg-color: #ffffff; /* Light mode background */
+    --text-color: #000000; /* Light mode text */
+    --sidebar-bg: linear-gradient(to bottom, #4f46e5, #3730a3); /* Sidebar gradient */
+    --sidebar-text: #e0e7ff; /* Sidebar text */
+    --navbar-bg: #ffffff; /* Navbar background */
+    --navbar-border: #4f46e5; /* Navbar border */
+    --chart-bg: #ffffff; /* Chart background */
+    --chart-text: #000000; /* Chart text */
+  }
+  
+  .dark {
+    --bg-color: #1a1a1a; /* Dark mode background */
+    --text-color: #ffffff; /* Dark mode text */
+    --sidebar-bg: linear-gradient(to bottom, #1e293b, #0f172a); /* Dark sidebar gradient */
+    --sidebar-text: #cbd5e1; /* Dark sidebar text */
+    --navbar-bg: #1e293b; /* Dark navbar background */
+    --navbar-border: #4f46e5; /* Dark navbar border */
+    --chart-bg: #1e293b; /* Dark chart background */
+    --chart-text: #ffffff; /* Dark chart text */
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .sidebar {
+    background: var(--sidebar-bg);
+    color: var(--sidebar-text);
+  }
+  
+  .navbar {
+    background-color: var(--navbar-bg);
+    border-bottom: 4px solid var(--navbar-border);
+  }
+  
+  .chart-container {
+    background-color: var(--chart-bg);
+    color: var(--chart-text);
+  }
