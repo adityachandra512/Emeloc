@@ -8,10 +8,10 @@ import logo from '../assets/logo.svg';
 
 // Import the separate component files
 import ManageOperators from './ManageOperators';
-import AllCases from './AllCases';
 import ManageAmbulances from './ManageAmbulances';
 import Profile from './Profile';
 import AdminOverview from './AdminOverview';  // Updated import
+import Allcases from './Allcases';
 
 const AdminDashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true); // Sidebar is initially open
@@ -204,7 +204,7 @@ const AdminDashboard = () => {
               <Route index element={<AdminOverview />} />
               <Route path="profile" element={<Profile />} />
               <Route path="operators" element={<ManageOperators />} />
-              <Route path="cases" element={<AllCases />} />
+              <Route path="cases" element={<Allcases />} />
               <Route path="ambulances" element={<ManageAmbulances />} />
             </Routes>
           </div>
