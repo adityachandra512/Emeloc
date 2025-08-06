@@ -36,7 +36,7 @@ const LocationShare = () => {
             const { latitude, longitude } = position.coords;
 
             // Send location to backend
-            const response = await fetch(`https://emeloc-backend.vercel.app/api/cases/${caseId}/location`, {
+            const response = await fetch(`https://emeloc-backend-azure.vercel.app/api/cases/${caseId}/location`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'

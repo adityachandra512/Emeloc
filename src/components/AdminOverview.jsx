@@ -25,7 +25,7 @@ const AdminOverview = () => {
       const token = localStorage.getItem('userToken');
 
       // Fetch operators (using the same endpoint as ManageOperators)
-      const operatorsResponse = await fetch('https://emeloc-backend.vercel.app/api/users/operators', {
+      const operatorsResponse = await fetch('https://emeloc-backend-azure.vercel.app/api/users/operators', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -33,7 +33,7 @@ const AdminOverview = () => {
       });
 
       // Fetch cases
-      const casesResponse = await fetch('https://emeloc-backend.vercel.app/api/cases', {
+      const casesResponse = await fetch('https://emeloc-backend-azure.vercel.app/api/cases', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -41,7 +41,7 @@ const AdminOverview = () => {
       });
 
       // Fetch ambulances
-      const ambulancesResponse = await fetch('https://emeloc-backend.vercel.app/api/ambulances', {
+      const ambulancesResponse = await fetch('https://emeloc-backend-azure.vercel.app/api/ambulances', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'

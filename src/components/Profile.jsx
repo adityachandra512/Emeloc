@@ -36,7 +36,7 @@ const Profile = () => {
         }
 
         // Fetch user data from API
-        const response = await fetch('https://emeloc-backend.vercel.app/api/auth/profile', {
+        const response = await fetch('https://emeloc-backend-azure.vercel.app/api/auth/profile', {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
@@ -83,7 +83,7 @@ const Profile = () => {
   const handleSave = async () => {
     try {
       const token = localStorage.getItem('userToken');
-      const response = await fetch('https://emeloc-backend.vercel.app/api/auth/profile', {
+      const response = await fetch('https://emeloc-backend-azure.vercel.app/api/auth/profile', {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,

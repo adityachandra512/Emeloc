@@ -20,7 +20,7 @@ const ManageAmbulances = () => {
     const fetchAmbulances = async () => {
         try {
             const token = localStorage.getItem('userToken');
-            const response = await fetch('https://emeloc-backend.vercel.app/api/ambulances', {
+            const response = await fetch('https://emeloc-backend-azure.vercel.app/api/ambulances', {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json'
@@ -50,8 +50,8 @@ const ManageAmbulances = () => {
         try {
             const token = localStorage.getItem('userToken');
             const url = editingAmbulance 
-                ? `https://emeloc-backend.vercel.app/api/ambulances/${editingAmbulance.id}`
-                : 'https://emeloc-backend.vercel.app/api/ambulances';
+                ? `https://emeloc-backend-azure.vercel.app/api/ambulances/${editingAmbulance.id}`
+                : 'https://emeloc-backend-azure.vercel.app/api/ambulances';
             
             const method = editingAmbulance ? 'PUT' : 'POST';
 
@@ -98,7 +98,7 @@ const ManageAmbulances = () => {
 
         try {
             const token = localStorage.getItem('userToken');
-            const response = await fetch(`https://emeloc-backend.vercel.app/api/ambulances/${ambulanceId}`, {
+            const response = await fetch(`https://emeloc-backend-azure.vercel.app/api/ambulances/${ambulanceId}`, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': `Bearer ${token}`,

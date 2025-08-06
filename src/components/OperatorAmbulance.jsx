@@ -14,7 +14,7 @@ const OperatorAmbulance = () => {
         const fetchAmbulances = async () => {
             try {
                 const token = localStorage.getItem('userToken');
-                const response = await fetch('https://emeloc-backend.vercel.app/api/ambulances', {
+                const response = await fetch('https://emeloc-backend-azure.vercel.app/api/ambulances', {
                     headers: {
                         'Authorization': `Bearer ${token}`,
                         'Content-Type': 'application/json'
@@ -44,7 +44,7 @@ const OperatorAmbulance = () => {
         const fetchCases = async () => {
             try {
                 const token = localStorage.getItem('userToken');
-                const response = await fetch('https://emeloc-backend.vercel.app/api/cases', {
+                const response = await fetch('https://emeloc-backend-azure.vercel.app/api/cases', {
                     headers: {
                         'Authorization': `Bearer ${token}`,
                         'Content-Type': 'application/json'
@@ -106,7 +106,7 @@ const OperatorAmbulance = () => {
             console.log('Sending tracking data:', trackingData);
 
             // Call the tracking system API
-            const response = await fetch('https://tracker-system-kappa.vercel.app/api/tracking/initiate', {
+            const response = await fetch('https://tracker-system-ten.vercel.app/api/tracking/initiate', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

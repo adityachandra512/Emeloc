@@ -16,7 +16,7 @@ const ManageOperators = () => {
     setIsLoading(true);
     try {
       const token = localStorage.getItem('userToken');
-      const response = await fetch('https://emeloc-backend.vercel.app/api/users/operators', {
+      const response = await fetch('https://emeloc-backend-azure.vercel.app/api/users/operators', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -48,7 +48,7 @@ const ManageOperators = () => {
     if (window.confirm('Are you sure you want to delete this operator?')) {
       try {
         const token = localStorage.getItem('userToken');
-        const response = await fetch(`https://emeloc-backend.vercel.app/api/users/${id}`, {
+        const response = await fetch(`https://emeloc-backend-azure.vercel.app/api/users/${id}`, {
           method: 'DELETE',
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -171,8 +171,8 @@ const OperatorModal = ({ operator, onClose, onSave }) => {
       const token = localStorage.getItem('userToken');
       const method = operator ? 'PUT' : 'POST';
       const url = operator
-        ? `https://emeloc-backend.vercel.app/api/users/${operator.id}`
-        : 'https://emeloc-backend.vercel.app/api/users';
+        ? `https://emeloc-backend-azure.vercel.app/api/users/${operator.id}`
+        : 'https://emeloc-backend-azure.vercel.app/api/users';
 
       const payload = {
         name: formData.name,

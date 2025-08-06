@@ -21,7 +21,7 @@ const SignInPage = () => {
     try {
       console.log('Sending data:', formData);
       
-      const response = await fetch('https://emeloc-backend.vercel.app/api/auth/signin', {
+      const response = await fetch('https://emeloc-backend-azure.vercel.app/api/auth/signin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -94,7 +94,7 @@ const SignInPage = () => {
           {/* Left Side - Sign In Form */}
           <div className="w-1/2 pr-8">
             <img 
-              src="../../src/assets/banner.svg" 
+              src="/src/assets/banner.svg" 
               alt="Logo" 
               className="w-1/2 pb-4 block mx-auto" 
             />

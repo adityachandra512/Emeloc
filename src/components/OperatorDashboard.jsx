@@ -33,7 +33,7 @@ const OperatorDashboard = () => {
   const fetchUserData = async () => {
     try {
       const token = localStorage.getItem('userToken');
-      const response = await fetch('https://emeloc-backend.vercel.app/api/auth/profile', {
+      const response = await fetch('https://emeloc-backend-azure.vercel.app/api/auth/profile', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -83,7 +83,7 @@ const OperatorDashboard = () => {
         const token = localStorage.getItem('userToken');
 
         // Fetch cases data
-        const casesResponse = await fetch('https://emeloc-backend.vercel.app/api/cases', {
+        const casesResponse = await fetch('https://emeloc-backend-azure.vercel.app/api/cases', {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
@@ -97,7 +97,7 @@ const OperatorDashboard = () => {
         }
 
         // Fetch ambulances data
-        const ambulancesResponse = await fetch('https://emeloc-backend.vercel.app/api/ambulances', {
+        const ambulancesResponse = await fetch('https://emeloc-backend-azure.vercel.app/api/ambulances', {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'

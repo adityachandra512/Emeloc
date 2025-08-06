@@ -20,7 +20,7 @@ const Cases = ({ isSidebarVisible }) => {
         setIsLoading(true);
         try {
             const token = localStorage.getItem('userToken');
-            const response = await fetch('https://emeloc-backend.vercel.app/api/cases', {
+            const response = await fetch('https://emeloc-backend-azure.vercel.app/api/cases', {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json'

@@ -16,7 +16,7 @@ const AllCases = () => {
     setIsLoading(true);
     try {
       const token = localStorage.getItem('userToken');
-      const response = await fetch('https://emeloc-backend.vercel.app/api/cases', {
+      const response = await fetch('https://emeloc-backend-azure.vercel.app/api/cases', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -46,7 +46,7 @@ const AllCases = () => {
     if (window.confirm('Are you sure you want to delete this case?')) {
       try {
         const token = localStorage.getItem('userToken');
-        const response = await fetch(`https://emeloc-backend.vercel.app/api/cases/${id}`, {
+        const response = await fetch(`https://emeloc-backend-azure.vercel.app/api/cases/${id}`, {
           method: 'DELETE',
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -82,8 +82,8 @@ const AllCases = () => {
       const token = localStorage.getItem('userToken');
       const method = currentCase ? 'PUT' : 'POST';
       const url = currentCase
-        ? `https://emeloc-backend.vercel.app/api/cases/${currentCase.id}`
-        : 'https://emeloc-backend.vercel.app/api/cases';
+        ? `https://emeloc-backend-azure.vercel.app/api/cases/${currentCase.id}`
+        : 'https://emeloc-backend-azure.vercel.app/api/cases';
 
       const response = await fetch(url, {
         method,
@@ -227,7 +227,7 @@ const CaseModal = ({ caseItem, onClose, onSave }) => {
     const fetchAmbulances = async () => {
       try {
         const token = localStorage.getItem('userToken');
-        const response = await fetch('https://emeloc-backend.vercel.app/api/ambulances', {
+        const response = await fetch('https://emeloc-backend-azure.vercel.app/api/ambulances', {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'

@@ -19,7 +19,7 @@ const NewCase = () => {
     const fetchAvailableAmbulances = async () => {
         try {
             const token = localStorage.getItem('userToken');
-            const response = await fetch('https://emeloc-backend.vercel.app/api/ambulances', {
+            const response = await fetch('https://emeloc-backend-azure.vercel.app/api/ambulances', {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json'
@@ -52,7 +52,7 @@ const NewCase = () => {
     const getOperatorIdByEmail = async (email) => {
         try {
             const token = localStorage.getItem('userToken');
-            const response = await fetch(`https://emeloc-backend.vercel.app/api/users/by-email?email=${encodeURIComponent(email)}`, {
+            const response = await fetch(`https://emeloc-backend-azure.vercel.app/api/users/by-email?email=${encodeURIComponent(email)}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json'
@@ -110,7 +110,7 @@ const NewCase = () => {
 
             // First, update ambulance status to 'busy'
             const token = localStorage.getItem('userToken');
-            const updateAmbulanceResponse = await fetch(`https://emeloc-backend.vercel.app/api/ambulances/${selectedAmbulance}`, {
+            const updateAmbulanceResponse = await fetch(`https://emeloc-backend-azure.vercel.app/api/ambulances/${selectedAmbulance}`, {
                 method: 'PUT',
                 headers: {
                     'Authorization': `Bearer ${token}`,
@@ -124,7 +124,7 @@ const NewCase = () => {
                 // Continue with case creation even if ambulance update fails
             }
 
-            const response = await fetch('https://send-email-delta.vercel.app/live-location', {
+            const response = await fetch('https://send-email-bay.vercel.app/live-location', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -135,7 +135,7 @@ const NewCase = () => {
             if (response.ok) {
                 const result = await response.json();
                 const caseId = result.caseId;
-                const shareUrl = `https://send-email-delta.vercel.app/share-location/${caseId}`;
+                const shareUrl = `https://send-email-bay.vercel.app/share-location/${caseId}`;
                 setLocationShareLink(shareUrl);
 
                 toast.success('Emergency case created and ambulance assigned successfully!', {
@@ -157,7 +157,7 @@ const NewCase = () => {
             } else {
                 // If case creation fails, revert ambulance status back to available
                 if (updateAmbulanceResponse.ok) {
-                    await fetch(`https://emeloc-backend.vercel.app/api/ambulances/${selectedAmbulance}`, {
+                    await fetch(`https://emeloc-backend-azure.vercel.app/api/ambulances/${selectedAmbulance}`, {
                         method: 'PUT',
                         headers: {
                             'Authorization': `Bearer ${token}`,
@@ -191,7 +191,7 @@ const NewCase = () => {
             // Revert ambulance status if there was an error
             try {
                 const token = localStorage.getItem('userToken');
-                await fetch(`https://emeloc-backend.vercel.app/api/ambulances/${selectedAmbulance}`, {
+                await fetch(`https://emeloc-backend-azure.vercel.app/api/ambulances/${selectedAmbulance}`, {
                     method: 'PUT',
                     headers: {
                         'Authorization': `Bearer ${token}`,
