@@ -106,7 +106,7 @@ const OperatorAmbulance = () => {
             console.log('Sending tracking data:', trackingData);
 
             // Call the tracking system API
-            const response = await fetch('https://tracker-system-ten.vercel.app/api/tracking/initiate', {
+            const response = await fetch('https://tracker-system-three.vercel.app/api/tracking/initiate', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

@@ -124,7 +124,7 @@ const NewCase = () => {
                 // Continue with case creation even if ambulance update fails
             }
 
-            const response = await fetch('https://send-email-bay.vercel.app/live-location', {
+            const response = await fetch('https://send-email-khaki.vercel.app/live-location', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -135,7 +135,7 @@ const NewCase = () => {
             if (response.ok) {
                 const result = await response.json();
                 const caseId = result.caseId;
-                const shareUrl = `https://send-email-bay.vercel.app/share-location/${caseId}`;
+                const shareUrl = `https://send-email-khaki.vercel.app/share-location/${caseId}`;
                 setLocationShareLink(shareUrl);
 
                 toast.success('Emergency case created and ambulance assigned successfully!', {
