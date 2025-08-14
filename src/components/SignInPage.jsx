@@ -1,5 +1,6 @@
 import { useState} from 'react';
 import { useNavigate } from 'react-router-dom';
+import banner from '../assets/banner.svg';
 
 const Bubble = ({ className }) => (
   <div className={`absolute rounded-full opacity-70 animate-rise ${className}`} />
@@ -94,7 +95,7 @@ const SignInPage = () => {
           {/* Left Side - Sign In Form */}
           <div className="w-1/2 pr-8">
             <img 
-              src="/src/assets/banner.svg" 
+              src={banner}
               alt="Logo" 
               className="w-1/2 pb-4 block mx-auto" 
             />
