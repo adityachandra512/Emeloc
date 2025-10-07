@@ -14,7 +14,7 @@ Emergency-Loc is a web-based system designed for emergency responders to efficie
 # Technology Stack
 - Frontend: React.js
 - Backend: Supabase (Database and Authentication)
-- Mapping: Leaflet.js
+- Mapping: OpenStreetMap API
 - Hosting: Vercel
 
 # Setup Instructions
